@@ -1,0 +1,183 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 80%; /* Adjust table width */
+            margin: 20px auto; /* Center the table */
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Summary</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Subjects</th>
+                <th>Percentages</th>
+                <th>Overall Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student_id, data in student_summary.items() %}
+                <tr>
+                    <td>{{ student_id }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>
+                        {% for subject in data.subjects.keys() %}
+                            {{ subject }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for percentage in data.subjects.values() %}
+                            {{ percentage }}%<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ data.overall_percentage }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin_home">Back to Admin Home</a>
+</body>
+</html>
+
+-->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 16px;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: center;
+        }
+        th {
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tr:hover {
+            background: #f1f8e9;
+        }
+        a {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            background: linear-gradient(to right, #2196f3, #64b5f6);
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Summary</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Subjects</th>
+                <th>Percentages</th>
+                <th>Overall Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student_id, data in student_summary.items() %}
+                <tr>
+                    <td>{{ student_id }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>
+                        {% for subject in data.subjects.keys() %}
+                            {{ subject }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for percentage in data.subjects.values() %}
+                            {{ percentage }}%<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ data.overall_percentage }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin_home">Back to Admin Home</a>
+</body>
+</html>

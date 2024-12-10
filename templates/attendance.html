@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #00796b;
+            margin-top: 20px;
+        }
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            color: #fff;
+            font-weight: bold;
+        }
+        td {
+            background: #f9f9f9;
+        }
+        tr:nth-child(even) td {
+            background: #f1f8e9;
+        }
+        h3 {
+            color: #388e3c;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Details</h1>
+    <p>Student ID: {{ student_id }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Present Count</th>
+                <th>Total Classes</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject, data in subject_attendance.items() %}
+                <tr>
+                    <td>{{ subject }}</td>
+                    <td>{{ data['present_count'] }}</td>
+                    <td>{{ data['total_classes'] }}</td>
+                    <td>{{ data['percentage'] }}%</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Overall Percentage: {{ overall_percentage }}%</h3>
+</body>
+</html>

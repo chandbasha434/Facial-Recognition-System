@@ -1,0 +1,82 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Home</title>
+</head>
+<body>
+    <h1>Welcome, Admin</h1>
+    <a href="/register_faculty">Register Faculty</a><br>
+    <a href="/faculty_list">View Faculty List</a><br> --><!-- New Link --><!--
+    <a href="/check_all_attendance">Check Attendance</a><br>
+    <a href="/admin_logout">Logout</a>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .btn {
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #357abd;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Admin</h1>
+        <a href="/register_faculty" class="btn btn-primary">Register Faculty</a>
+        <a href="/faculty_list" class="btn btn-primary">View Faculty List</a>
+        <a href="/check_all_attendance" class="btn btn-primary">Check Attendance</a>
+        <a href="/admin_logout" class="btn btn-danger">Logout</a>
+    </div>
+</body>
+</html>

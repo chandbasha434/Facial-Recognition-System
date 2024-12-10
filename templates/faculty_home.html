@@ -1,0 +1,80 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Home</title>
+</head>
+<body>
+    <h1>Welcome, {{ faculty_name }}</h1>
+    <h2>Subject: {{ subject }}</h2>
+    <a href="/mark_attendance" target="_blank" >Mark Attendance</a><br>
+    <a href="/check_attendance">Check Attendance</a><br>
+    <a href="/logout">Logout</a>
+</body>
+</html>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #388e3c;
+            margin-bottom: 30px;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            background: linear-gradient(to right, #2196f3, #64b5f6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ faculty_name }}</h1>
+        <h2>Subject: {{ subject }}</h2>
+        <a href="/mark_attendance" target="_blank">Mark Attendance</a>
+        <a href="/check_attendance">Check Attendance</a>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
+

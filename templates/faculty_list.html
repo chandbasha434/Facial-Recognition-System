@@ -1,0 +1,128 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty List</title>
+</head>
+<body>
+    <h1>Faculty List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Faculty ID</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Year</th>
+                <th>Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faculty in faculty_data %}
+            <tr>
+                <td>{{ faculty[0] }}</td>
+                <td>{{ faculty[1] }}</td>
+                <td>{{ faculty[2] }}</td>
+                <td>{{ faculty[3] }}</td>
+                <td>{{ faculty[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin_home">Back to Home</a>
+</body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        h1 {
+            color: #00796b;
+            margin-top: 20px;
+        }
+        table {
+            width: 90%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        thead th {
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            color: #ffffff;
+            padding: 12px 15px;
+            text-align: center;
+        }
+        tbody td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tbody tr:hover {
+            background: #f1f8e9;
+        }
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            background: linear-gradient(to right, #2196f3, #64b5f6);
+        }
+    </style>
+</head>
+<body>
+    <h1>Faculty List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Faculty ID</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Year</th>
+                <th>Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faculty in faculty_data %}
+            <tr>
+                <td>{{ faculty[0] }}</td>
+                <td>{{ faculty[1] }}</td>
+                <td>{{ faculty[2] }}</td>
+                <td>{{ faculty[3] }}</td>
+                <td>{{ faculty[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin_home">Back to Home</a>
+</body>
+</html>
+

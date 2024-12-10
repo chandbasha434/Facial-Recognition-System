@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Attendance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        table {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        thead th {
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            color: #ffffff;
+            text-align: center;
+        }
+        tbody td {
+            text-align: center;
+        }
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tbody tr:hover {
+            background: #f1f8e9;
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #64b5f6, #2196f3);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2196f3, #64b5f6);
+        }
+        .text-center a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">{{ subject }} Attendance Summary</h2> <!-- Updated heading -->
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Classes Attended</th>
+                    <th>Total Classes</th>
+                    <th>Attendance Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in attendance_summary %}
+                <tr>
+                    <td>{{ student['Student ID'] }}</td>
+                    <td>{{ student['Name'] }}</td>
+                    <td>{{ student['Present Count'] }}</td>
+                    <td>{{ student['Total Classes'] }}</td>
+                    <td>{{ student['Attendance Percentage']|round(2) }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="{{ url_for('faculty_home') }}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Fullscreen background and centered content */
+        body {
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your desired image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        h1 {
+            color: #f8f9fa;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            color: #f8f9fa;
+            justify-content: left;
+        }
+        .btn-primary {
+            font-weight: bold;
+            padding: 10px 20px;
+            width: 100%;
+            color: White;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register Student</h1>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+
+-->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Fullscreen background and centered content */
+        body {
+            background-image: url('https://via.placeholder.com/1920x1080'); /* Replace with your desired image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ffffff;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        h1 {
+            color: #f8f9fa;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            color: #f8f9fa;
+            justify-content: left;
+        }
+        .btn-primary {
+            font-weight: bold;
+            padding: 10px 20px;
+            width: 100%;
+            color: White;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Function to validate form
+        function validateForm(event) {
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+
+            // Regex for ID: Starts with R, S, O, N, B followed by exactly 6 digits
+            const idPattern = /^[RSOBN]\d{6}$/;
+            if (!idPattern.test(id)) {
+                alert('ID must start with R, S, O, N, or B followed by 6 digits.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Regex for Name: Only letters and spaces
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(name)) {
+                alert('Name must contain only letters and spaces. No numbers or special characters are allowed.');
+                event.preventDefault();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register Student</h1>
+        <form action="/register" method="post" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" name="id" required
+                       pattern="[RSOBN]\d{6}"
+                       title="ID must start with R, S, O, N, or B followed by 6 digits">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required
+                       pattern="[A-Za-z\s]+"
+                       title="Name must contain only letters and spaces.">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
